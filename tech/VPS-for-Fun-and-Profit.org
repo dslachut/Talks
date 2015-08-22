@@ -1,0 +1,48 @@
+#+TITLE:  VPS for Fun and Profit
+#+AUTHOR: David Lachut
+#+EMAIL:  dlachut1@umbc.edu
+#+DATE:   30 September 2015
+
+#+DESCRIPTION: 
+#+KEYWORDS:    
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t tags:nil
+#+OPTIONS:     TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil toc:nil tags:not-in-toc
+#+INFOJS_OPT:  view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+
+#+EXPORT_SELECT_TAGS:  export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LINK_UP:   
+#+LINK_HOME: 
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usepackage{subfigure}
+#+LaTeX_HEADER: \usepackage{algorithmic}
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_THEME: Boadilla
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+
+# \author[David Lachut]{{\large David Lachut}\\
+#   Mobile, Pervasive, and Sensor Systems Lab\\
+#   ECLIPSE Cluster\\
+#   Department of Computer Science and Electrical Engineering\\
+#   University of Maryland, Baltimore County\\
+#   {\tt dlachut1@umbc.edu}\\
+#   \url{http://dslachut.com}
+# }
+
+* Who
+*** Who are you
+- David Lachut
+- PhD Candidate in Computer Science
+- Debian User and Open Source Enthusiast
+- 
+* What
+
+* Where
+
+* 
