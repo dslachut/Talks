@@ -35,16 +35,81 @@
 #   \url{http://dslachut.com}
 # }
 
-* Who
+* Who is this guy?							 :2m:
 *** Disclaimer
-
-*** Who are you
+- This presentation is my opinion, and does not necessarily represent the 
+  beliefs or opinions of UMBC, UMBC CSEE, ECLIPSE, MPSS, NSF, Samsung, the 
+  State of Maryland, or any other person or group with whom I may be affiliated
+  now, in the past, or in the future.
+- All trademarks are the property of their respective owners.
+- No animals were harmed in the making of this presentation.
+*** Who am I?
 - David Lachut
 - PhD Candidate in Computer Science
-- Debian User and Open Source Enthusiast
-- 
-* What
-
-* Where
-
-* 
+  - /Holistic Home Energy Management: From Sensing to Data Analytics/
+- B.S. Physics, 2009, University of Arkansas--Fayetteville
+- Linux and Open Source Enthusiast
+*** This is my history with Linux
+- First distro: Ubuntu 7.10 /Gutsy Gibbon/
+- Current distros: Debian (Stable and Testing), Ubuntu Mate (RPi2)
+- Personal beliefs
+**** 								      :BMCOL:
+  :PROPERTIES:
+  :BEAMER_col: 0.45
+  :END:
+  - Linux
+  - Debian
+  - KDE
+  - Emacs
+  - GPLv2
+  - /ˈdʒɪf/
+**** 								      :BMCOL:
+  :PROPERTIES:
+  :BEAMER_col: 0.45
+  :END:
+  - Python
+  - Go
+  - Star Trek
+  - Picard
+  - DS9
+  - ...
+* What is a VPS?							 :3m:
+*** What is a VPS?
+| A VPS isn't...        | A VPS is...         |
+|-----------------------+---------------------|
+| Just a webhost        | An actual server    |
+| An on-premises server | In /THE CLOUD/      |
+| A dedicated server    | Virtualized         |
+*** What is virtualization?
+- A software simulation of computer hardware
+- A way to run multiple computers on the same computer at the same time
+  - Yo dawg...
+- Virtualization vs Para-virtualization
+* Why would I want a VPS?						 :2m:
+*** Why you wouldn't use a VPS
+- Super-duper-top-secret data
+- You have specific or arcane requirements
+- Need access to the bare-metal
+*** Why you would use a VPS
+- Someone else does hardware maintenance
+- Always on for a predictable cost
+- Super high speed
+- I am ROOT
+* How can I use a VPS?
+** Owncloud								 :2m:
+** Hugo									 :3m:
+** Micro-Reader								 :2m:
+** Gogs									 :2m:
+** X2Go									 :2m:
+** SSHuttle								 :2m:
+** Mosh									 :2m:
+** IPython								 :1m:
+** Irssi								 :1m:
+** Random Stuff								 :2m:
+** Webfront								 :2m:
+* Where can I get a VPS?						 :2m:
+*** Where you can get a VPS
+1. DigitalOcean.com
+2. BuyVM.net
+3. Chunkhost.com
+4. Linode.com
