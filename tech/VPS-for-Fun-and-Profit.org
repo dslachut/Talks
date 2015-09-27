@@ -35,6 +35,35 @@
 #   \url{http://dslachut.com}
 # }
 
+* Abstract
+** Bio
+- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
+  Maryland, Baltimore County. His research combines home automation and data 
+  analysis to build residential energy management systems. His first linux 
+  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
+  Debian Testing. And his secret ambition is to live on the starship 
+  Enterprise, or at least to do his part to invent the Enterprise's computer.
+** VPS for Fun and Profit!
+- Were you burned when Google shut down Reader? Do you want a computer you can 
+  reach from anywhere? Do you want the cloud without the creepy? Do you just 
+  want a playground to improve you linux skills? You should get your own server
+  that's super-fast, always on, and always accessible. This talk will introduce 
+  the idea of a virtual private server and survey several ways you can use one 
+  to improve your life.
+* Introduction 
+*** Servers are great!
+*** Who is this guy?
+*** Disclaimers
+- This presentation is full of my opinions. It does not necessarily represent 
+  the beliefs or opinions of UMBC, the MPSS Lab, the NSF, the State of 
+  Maryland, Samsung Electronics America, or any other group with whom I may be 
+  affiliated.
+- All trademarks herein are the property of their respective owners.
+- No animals were harmed in the making of this presentation.
+
+
+
+
 * Who is this guy?							 :2m:
 *** Disclaimer
 - This presentation is my opinion, and does not necessarily represent the 
