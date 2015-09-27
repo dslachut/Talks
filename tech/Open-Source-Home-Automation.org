@@ -1,0 +1,14 @@
+* Bio
+- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
+  Maryland, Baltimore County. His research combines home automation and data 
+  analysis to build residential energy management systems. His first linux 
+  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
+  Debian Testing. And his secret ambition is to live on the starship 
+  Enterprise, or at least to do his part to invent the Enterprise's computer.
+* Home Automation with F/LOSS
+- If you're like me, you want to live in the home of the future where automated
+  servants treat you like royalty. And, if you're like me, you can't stand the
+  idea of running something so important as your home with proprietary 
+  software. This talk will overview the current landscape of home-automation
+  technology, see where free software can come in to it, and go over the basics
+  of automating your own home.
