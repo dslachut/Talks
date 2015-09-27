@@ -1,4 +1,4 @@
-#+TITLE:  VPS for Fun and Profit
+#+TITLE:  VPS for Fun and Profit!
 #+AUTHOR: David Lachut
 #+EMAIL:  dlachut1@umbc.edu
 #+DATE:   30 September 2015
@@ -35,24 +35,63 @@
 #   \url{http://dslachut.com}
 # }
 
-* Abstract
-** Bio
-- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
-  Maryland, Baltimore County. His research combines home automation and data 
-  analysis to build residential energy management systems. His first linux 
-  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
-  Debian Testing. And his secret ambition is to live on the starship 
-  Enterprise, or at least to do his part to invent the Enterprise's computer.
-** VPS for Fun and Profit!
+* Abstract														   :noexport:
+*** Abstract
+**** Summary
 - Were you burned when Google shut down Reader? Do you want a computer you can 
   reach from anywhere? Do you want the cloud without the creepy? Do you just 
   want a playground to improve you linux skills? You should get your own server
   that's super-fast, always on, and always accessible. This talk will introduce 
   the idea of a virtual private server and survey several ways you can use one 
   to improve your life.
+**** Bio
+- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
+  Maryland, Baltimore County. His research combines home automation and data 
+  analysis to build residential energy management systems. His first linux 
+  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
+  Debian Testing. And his secret ambition is to live on the starship 
+  Enterprise, or at least to do his part to invent the Enterprise's computer.
 * Introduction 
 *** Servers are great!
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/cloud.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+- Cheap
+- Reliable
+- Easy to use
+- Convenient
+- Useful
+
 *** Who is this guy?
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+- David Lachut
+- PhD Candidate in Computer Science
+  - /Holistic Home Energy Management: From Sensing to Data Analytics/
+- B.S. Physics, 2009, University of Arkansas--Fayetteville
+- Linux and Open Source Enthusiast
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/IMG_20150927_160940197_HDR.jpg]]
+
 *** Disclaimers
 - This presentation is full of my opinions. It does not necessarily represent 
   the beliefs or opinions of UMBC, the MPSS Lab, the NSF, the State of 
@@ -60,65 +99,53 @@
   affiliated.
 - All trademarks herein are the property of their respective owners.
 - No animals were harmed in the making of this presentation.
-
-
-
-
-* Who is this guy?							 :2m:
-*** Disclaimer
-- This presentation is my opinion, and does not necessarily represent the 
-  beliefs or opinions of UMBC, UMBC CSEE, ECLIPSE, MPSS, NSF, Samsung, the 
-  State of Maryland, or any other person or group with whom I may be affiliated
-  now, in the past, or in the future.
-- All trademarks are the property of their respective owners.
-- No animals were harmed in the making of this presentation.
-*** Who am I?
-- David Lachut
-- PhD Candidate in Computer Science
-  - /Holistic Home Energy Management: From Sensing to Data Analytics/
-- B.S. Physics, 2009, University of Arkansas--Fayetteville
-- Linux and Open Source Enthusiast
-*** This is my history with Linux
-- First distro: Ubuntu 7.10 /Gutsy Gibbon/
-- Current distros: Debian (Stable and Testing), Ubuntu Mate (RPi2)
-- Personal beliefs
-**** 								      :BMCOL:
-  :PROPERTIES:
-  :BEAMER_col: 0.45
-  :END:
-  - Linux
-  - Debian
-  - KDE
-  - Emacs
-  - GPLv2
-  - /ˈdʒɪf/
-**** 								      :BMCOL:
-  :PROPERTIES:
-  :BEAMER_col: 0.45
-  :END:
-  - Python
-  - Go
-  - Star Trek
-  - Picard
-  - DS9
-  - ...
-* What is a VPS?							 :3m:
-*** What is a VPS?
-| A VPS isn't...        | A VPS is...         |
-|-----------------------+---------------------|
-| Just a webhost        | An actual server    |
-| An on-premises server | In /THE CLOUD/      |
-| A dedicated server    | Virtualized         |
+* What is a VPS?
 *** What is virtualization?
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/yodawg.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
 - A software simulation of computer hardware
 - A way to run multiple computers on the same computer at the same time
-  - Yo dawg...
-- Virtualization vs Para-virtualization
-* Why would I want a VPS?						 :2m:
+- Para-virtualization shares a kernel with multiple environments
+
+*** What is a Virtual Private Server?
+#+BEAMER: \begin{Large}
+| A VPS is...      | A VPS isn't...        |
+|------------------+-----------------------|
+| An actual server | Just a webhost        |
+| In /THE CLOUD/   | An on-premises server |
+| Virtualized      | A dedicated server    |
+#+BEAMER: \end{Large}
+* Why would I want a VPS? 												 :2m:
 *** Why you wouldn't use a VPS
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
 - Super-duper-top-secret data
 - You have specific or arcane requirements
 - Need access to the bare-metal
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/Nsa-eagle-white.jpg]]
+
+
 *** Why you would use a VPS
 - Someone else does hardware maintenance
 - Always on for a predictable cost

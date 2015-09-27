@@ -1,4 +1,4 @@
-% Created 2015-08-22 Sat 17:27
+% Created 2015-09-27 Sun 17:22
 \documentclass[presentation,aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -18,19 +18,10 @@
 \tolerance=1000
 \usepackage{subfigure}
 \usepackage{algorithmic}
-\usetheme{Boadilla}
+\usetheme{default}
 \author{David Lachut}
-\author[David Lachut]{{\large David Lachut}\\
-  Mobile, Pervasive, and Sensor Systems Lab\\
-  ECLIPSE Cluster\\
-  Department of Computer Science and Electrical Engineering\\
-  University of Maryland, Baltimore County\\
-  {\tt dlachut1@umbc.edu}\\
-  \url{http://dslachut.com}
-}
-
 \date{30 September 2015}
-\title{VPS for Fun and Profit}
+\title{VPS for Fun and Profit!}
 \hypersetup{
   pdfkeywords={},
   pdfsubject={},
@@ -39,23 +30,155 @@
 
 \maketitle
 
-\section{Who}
+\section{Introduction}
 \label{sec-1}
-\begin{frame}[label=sec-1-0-1]{Who are you}
+\begin{frame}[label=sec-1-0-1]{Servers are great!}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/cloud.png}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{itemize}
+\item Cheap
+\item Reliable
+\item Easy to use
+\item Convenient
+\item Useful
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label=sec-1-0-2]{Who is this guy?}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+
 \begin{itemize}
 \item David Lachut
 \item PhD Candidate in Computer Science
-\item Debian User and Open Source Enthusiast
-\item 
+\begin{itemize}
+\item \emph{Holistic Home Energy Management: From Sensing to Data Analytics}
+\end{itemize}
+\item B.S. Physics, 2009, University of Arkansas--Fayetteville
+\item Linux and Open Source Enthusiast
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/IMG_20150927_160940197_HDR.jpg}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label=sec-1-0-3]{Disclaimers}
+\begin{itemize}
+\item This presentation is full of my opinions. It does not necessarily represent 
+the beliefs or opinions of UMBC, the MPSS Lab, the NSF, the State of 
+Maryland, Samsung Electronics America, or any other group with whom I may be 
+affiliated.
+\item All trademarks herein are the property of their respective owners.
+\item No animals were harmed in the making of this presentation.
 \end{itemize}
 \end{frame}
-\section{What}
+\section{What is a VPS?}
 \label{sec-2}
+\begin{frame}[label=sec-2-0-1]{What is virtualization?}
+\begin{columns}
+\begin{column}{0.45\textwidth}
 
-\section{Where}
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/yodawg.png}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{itemize}
+\item A software simulation of computer hardware
+\item A way to run multiple computers on the same computer at the same time
+\item Para-virtualization shares a kernel with multiple environments
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label=sec-2-0-2]{What is a Virtual Private Server?}
+\begin{Large}
+\begin{center}
+\begin{tabular}{ll}
+A VPS is\ldots{} & A VPS isn't\ldots{}\\
+\hline
+An actual server & Just a webhost\\
+In \emph{THE CLOUD} & An on-premises server\\
+Virtualized & A dedicated server\\
+\end{tabular}
+\end{center}
+\end{Large}
+\end{frame}
+\section[Why would I want a VPS?]{Why would I want a VPS?\hfill{}\textsc{2m}}
 \label{sec-3}
+\begin{frame}[label=sec-3-0-1]{Why you wouldn't use a VPS}
+\begin{columns}
+\begin{column}{0.45\textwidth}
 
-\section{}
+\begin{itemize}
+\item Super-duper-top-secret data
+\item You have specific or arcane requirements
+\item Need access to the bare-metal
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/Nsa-eagle-white.jpg}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[label=sec-3-0-2]{Why you would use a VPS}
+\begin{itemize}
+\item Someone else does hardware maintenance
+\item Always on for a predictable cost
+\item Super high speed
+\item I am ROOT
+\end{itemize}
+\end{frame}
+\section{How can I use a VPS?}
 \label{sec-4}
+\subsection[Owncloud]{Owncloud\hfill{}\textsc{2m}}
+\label{sec-4-1}
+\subsection[Hugo]{Hugo\hfill{}\textsc{3m}}
+\label{sec-4-2}
+\subsection[Micro-Reader]{Micro-Reader\hfill{}\textsc{2m}}
+\label{sec-4-3}
+\subsection[Gogs]{Gogs\hfill{}\textsc{2m}}
+\label{sec-4-4}
+\subsection[X2Go]{X2Go\hfill{}\textsc{2m}}
+\label{sec-4-5}
+\subsection[SSHuttle]{SSHuttle\hfill{}\textsc{2m}}
+\label{sec-4-6}
+\subsection[Mosh]{Mosh\hfill{}\textsc{2m}}
+\label{sec-4-7}
+\subsection[IPython]{IPython\hfill{}\textsc{1m}}
+\label{sec-4-8}
+\subsection[Irssi]{Irssi\hfill{}\textsc{1m}}
+\label{sec-4-9}
+\subsection[Random Stuff]{Random Stuff\hfill{}\textsc{2m}}
+\label{sec-4-10}
+\subsection[Webfront]{Webfront\hfill{}\textsc{2m}}
+\label{sec-4-11}
+\section[Where can I get a VPS?]{Where can I get a VPS?\hfill{}\textsc{2m}}
+\label{sec-5}
+\begin{frame}[label=sec-5-0-1]{Where you can get a VPS}
+\begin{enumerate}
+\item DigitalOcean.com
+\item BuyVM.net
+\item Chunkhost.com
+\item Linode.com
+\end{enumerate}
+\end{frame}
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}
