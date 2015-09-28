@@ -1,4 +1,4 @@
-% Created 2015-09-27 Sun 17:22
+% Created 2015-09-28 Mon 17:43
 \documentclass[presentation,aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -29,8 +29,13 @@
 \begin{document}
 
 \maketitle
+\begin{frame}{Outline}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\end{frame}
 
-\section{Introduction}
+
+\section{Who is this guy?}
 \label{sec-1}
 \begin{frame}[label=sec-1-0-1]{Servers are great!}
 \begin{columns}
@@ -88,12 +93,12 @@ affiliated.
 \label{sec-2}
 \begin{frame}[label=sec-2-0-1]{What is virtualization?}
 \begin{columns}
-\begin{column}{0.45\textwidth}
+\begin{column}{0.35\textwidth}
 
 \includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/yodawg.png}
 \end{column}
 
-\begin{column}{0.45\textwidth}
+\begin{column}{0.6\textwidth}
 
 \begin{itemize}
 \item A software simulation of computer hardware
@@ -117,68 +122,280 @@ Virtualized & A dedicated server\\
 \end{center}
 \end{Large}
 \end{frame}
-\section[Why would I want a VPS?]{Why would I want a VPS?\hfill{}\textsc{2m}}
+\section{Why would I want one?}
 \label{sec-3}
 \begin{frame}[label=sec-3-0-1]{Why you wouldn't use a VPS}
 \begin{columns}
 \begin{column}{0.45\textwidth}
 
 \begin{itemize}
-\item Super-duper-top-secret data
-\item You have specific or arcane requirements
+\item Data is super-duper-top-secret
+\item Have specific or arcane requirements
 \item Need access to the bare-metal
+\item "It's stupidity. It's worse than stupidity"
+\begin{itemize}
+\item \emph{RMS}
+\end{itemize}
 \end{itemize}
 \end{column}
 
 \begin{column}{0.45\textwidth}
 
-\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/Nsa-eagle-white.jpg}
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/thereisnocloud.pdf}
 \end{column}
 \end{columns}
 \end{frame}
 
-
 \begin{frame}[label=sec-3-0-2]{Why you would use a VPS}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/thereisnocloud2.pdf}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
 \begin{itemize}
 \item Someone else does hardware maintenance
 \item Always on for a predictable cost
 \item Super high speed
 \item I am ROOT
 \end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
-\section{How can I use a VPS?}
+
+\section{How could I use it?}
 \label{sec-4}
-\subsection[Owncloud]{Owncloud\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-0-1]{What can I do with one of these VPS things?}
+\end{frame}
+\subsection{Owncloud}
 \label{sec-4-1}
-\subsection[Hugo]{Hugo\hfill{}\textsc{3m}}
+\begin{frame}[label=sec-4-1-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[width=.9\textwidth]{./img/VPS-for-Fun-and-Profit/owncloud.pdf}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-1-2]{Sync your calendars and contacts}
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/ocCal.png}
+\end{frame}
+\begin{frame}[label=sec-4-1-3]{Sync your files, Back-up your photos}
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/ocFiles.png}
+\end{frame}
+\begin{frame}[label=sec-4-1-4]{Extend it with apps}
+\begin{columns}
+\begin{column}{0.3\textwidth}
+
+\begin{itemize}
+\item ToDo List
+\item Music
+\item Photo gallery
+\item RSS
+\item Firefox Sync
+\item Note taking
+\item Document editing
+\item Journal
+\item External storage
+\item Encryption
+\item E-Mail
+\end{itemize}
+\end{column}
+
+\begin{column}{0.65\textwidth}
+
+\includegraphics[width=\textwidth]{./img/VPS-for-Fun-and-Profit/ocApps.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Hugo}
 \label{sec-4-2}
-\subsection[Micro-Reader]{Micro-Reader\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-2-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/hugo.png}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-2-2]{Host your own website}
+\begin{columns}
+\begin{column}{0.35\textwidth}
+
+\begin{itemize}
+\item Replace Blogger and Wordpress
+\item Written in Go
+\item Many customizable templates
+\item Static site generator
+\item Write posts in Markdown
+\end{itemize}
+\end{column}
+
+\begin{column}{0.6\textwidth}
+
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/dslcom.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Micro-Reader}
 \label{sec-4-3}
-\subsection[Gogs]{Gogs\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-3-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/microreader.png}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-3-2]{Track RSS feeds}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/rss.png}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{itemize}
+\item Replace Google Reader
+\item Subscribe to feeds
+\item Convenient browsing in one place
+\item Use from any computer
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Gogs}
 \label{sec-4-4}
-\subsection[X2Go]{X2Go\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-4-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/gogs.png}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-4-2]{Host your own Github}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+
+\begin{itemize}
+\item Gogs: The Go Git Service
+\item Github, but with free, private repos
+\item No integrated bug-tracker
+\item No integrated wiki
+\item Fast, minimal-dependencies
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/gitlacnet.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{X2Go}
 \label{sec-4-5}
-\subsection[SSHuttle]{SSHuttle\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-5-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/x2go.png}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-5-2]{My Raspberry Pi has a Xeon processor}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/x3go.png}
+\end{column}
+
+\begin{column}{0.35\textwidth}
+
+\begin{itemize}
+\item X2Go is a superb remote-desktop for Linux hosts
+\item With Linux, Windows, and OSX clients
+\item Fast enough for Youtube
+\item Have a high-power computer that feels local, even on a SBC
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{SSHuttle}
 \label{sec-4-6}
-\subsection[Mosh]{Mosh\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-6-1]{You can run \ldots{}}
+\begin{center}
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/sshuttle.png}
+\end{center}
+\end{frame}
+\begin{frame}[label=sec-4-6-2]{sshuttle is a simple VPN}
+\begin{itemize}
+\item Transparent proxy server
+\item Actually runs on local computer
+\item Requires local SSH, Python, and Root
+\item Requires remote server with Python and SSH
+\item Tunnel all network traffic over SSH
+\end{itemize}
+\end{frame}
+\subsection{Jupyter}
 \label{sec-4-7}
-\subsection[IPython]{IPython\hfill{}\textsc{1m}}
+\begin{frame}[label=sec-4-7-1]{You can try \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/jupyter.png}
+\end{center}
+\end{frame}
+\subsection{Irssi}
 \label{sec-4-8}
-\subsection[Irssi]{Irssi\hfill{}\textsc{1m}}
+\begin{frame}[label=sec-4-8-1]{You can try \ldots{}}
+\begin{center}
+\includegraphics[width=1\textwidth]{./img/VPS-for-Fun-and-Profit/irssi.png}
+\end{center}
+\end{frame}
+\subsection{Mosh}
 \label{sec-4-9}
-\subsection[Random Stuff]{Random Stuff\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-9-1]{You can try \ldots{}}
+\begin{center}
+\includegraphics[height=0.85\textheight]{./img/VPS-for-Fun-and-Profit/mosh.png}
+\end{center}
+\end{frame}
+\subsection{Random Stuff}
 \label{sec-4-10}
-\subsection[Webfront]{Webfront\hfill{}\textsc{2m}}
-\label{sec-4-11}
-\section[Where can I get a VPS?]{Where can I get a VPS?\hfill{}\textsc{2m}}
+\begin{frame}[label=sec-4-10-1]{You can do other random things}
+\begin{itemize}
+\item Host random files too large to email
+\item Run a Minecraft server
+\item Host that one project you want to do
+\item Run a Mumble server
+\item \ldots{}
+\end{itemize}
+\end{frame}
+\section{Wow! Where can I get one?}
 \label{sec-5}
 \begin{frame}[label=sec-5-0-1]{Where you can get a VPS}
-\begin{enumerate}
-\item DigitalOcean.com
-\item BuyVM.net
-\item Chunkhost.com
-\item Linode.com
-\end{enumerate}
+\begin{columns}
+\begin{column}{0.48\textwidth}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./img/VPS-for-Fun-and-Profit/do.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./img/VPS-for-Fun-and-Profit/buyvm.png}
+\end{center}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./img/VPS-for-Fun-and-Profit/ch.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./img/VPS-for-Fun-and-Profit/linode.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label=sec-5-0-2]{This has been \emph{VPS for Fun and Profit!}}
+\begin{itemize}
+\item Slide source code available at \alert{Github.com/dslachut/talks/tech}
+\item Copyleft David Lachut 2015, CC-BY-SA
+\item Questions?
+\end{itemize}
 \end{frame}
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}

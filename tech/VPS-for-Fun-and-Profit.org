@@ -7,7 +7,7 @@
 #+KEYWORDS:    
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t tags:nil
-#+OPTIONS:     TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil toc:nil tags:not-in-toc
+#+OPTIONS:     TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil toc:1 tags:not-in-toc
 #+INFOJS_OPT:  view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 
 #+EXPORT_SELECT_TAGS:  export
@@ -51,7 +51,7 @@
   distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
   Debian Testing. And his secret ambition is to live on the starship 
   Enterprise, or at least to do his part to invent the Enterprise's computer.
-* Introduction 
+* Who is this guy? 
 *** Servers are great!
 **** Left 															  :BMCOL:
 :PROPERTIES:
@@ -103,7 +103,7 @@
 *** What is virtualization?
 **** Left 															  :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.45
+:BEAMER_col: 0.35
 :END:
 
 #+ATTR_LATEX: :width \textwidth
@@ -111,7 +111,7 @@
 
 **** Right 															  :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.45
+:BEAMER_col: 0.6
 :END:
 
 - A software simulation of computer hardware
@@ -126,16 +126,18 @@
 | In /THE CLOUD/   | An on-premises server |
 | Virtualized      | A dedicated server    |
 #+BEAMER: \end{Large}
-* Why would I want a VPS? 												 :2m:
+* Why would I want one?
 *** Why you wouldn't use a VPS
 **** Left 															  :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.45
 :END:
 
-- Super-duper-top-secret data
-- You have specific or arcane requirements
+- Data is super-duper-top-secret
+- Have specific or arcane requirements
 - Need access to the bare-metal
+- "It's stupidity. It's worse than stupidity"
+  - /RMS/
 
 **** Right 															  :BMCOL:
 :PROPERTIES:
@@ -143,29 +145,239 @@
 :END:
 
 #+ATTR_LATEX: :width \textwidth
-[[./img/VPS-for-Fun-and-Profit/Nsa-eagle-white.jpg]]
-
+[[./img/VPS-for-Fun-and-Profit/thereisnocloud.pdf]]
 
 *** Why you would use a VPS
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/thereisnocloud2.pdf]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
 - Someone else does hardware maintenance
 - Always on for a predictable cost
 - Super high speed
 - I am ROOT
-* How can I use a VPS?
-** Owncloud								 :2m:
-** Hugo									 :3m:
-** Micro-Reader								 :2m:
-** Gogs									 :2m:
-** X2Go									 :2m:
-** SSHuttle								 :2m:
-** Mosh									 :2m:
-** IPython								 :1m:
-** Irssi								 :1m:
-** Random Stuff								 :2m:
-** Webfront								 :2m:
-* Where can I get a VPS?						 :2m:
+
+* How could I use it?
+*** What can I do with one of these VPS things?
+** Owncloud
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width .9\textwidth
+[[./img/VPS-for-Fun-and-Profit/owncloud.pdf]]
+#+BEAMER: \end{center}
+*** Sync your calendars and contacts
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/ocCal.png]]
+*** Sync your files, Back-up your photos
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/ocFiles.png]]
+*** Extend it with apps
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+- ToDo List
+- Music
+- Photo gallery
+- RSS
+- Firefox Sync
+- Note taking
+- Document editing
+- Journal
+- External storage
+- Encryption
+- E-Mail
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.65
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/ocApps.png]]
+
+** Hugo
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight :centering
+[[./img/VPS-for-Fun-and-Profit/hugo.png]]
+#+BEAMER: \end{center}
+*** Host your own website
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.35
+:END:
+
+- Replace Blogger and Wordpress
+- Written in Go
+- Many customizable templates
+- Static site generator
+- Write posts in Markdown
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+#+ATTR_LATEX: :width 1\textwidth
+[[./img/VPS-for-Fun-and-Profit/dslcom.png]]
+
+** Micro-Reader
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight :centering
+[[./img/VPS-for-Fun-and-Profit/microreader.png]]
+#+BEAMER: \end{center}
+*** Track RSS feeds
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.55
+:END:
+
+#+ATTR_LATEX: :width 1\textwidth
+[[./img/VPS-for-Fun-and-Profit/rss.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+- Replace Google Reader
+- Subscribe to feeds
+- Convenient browsing in one place
+- Use from any computer
+
+** Gogs
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight :centering
+[[./img/VPS-for-Fun-and-Profit/gogs.png]]
+#+BEAMER: \end{center}
+*** Host your own Github
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+- Gogs: The Go Git Service
+- Github, but with free, private repos
+- No integrated bug-tracker
+- No integrated wiki
+- Fast, minimal-dependencies
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+
+#+ATTR_LATEX: :width 1\textwidth
+[[./img/VPS-for-Fun-and-Profit/gitlacnet.png]]
+
+** X2Go
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight :centering
+[[./img/VPS-for-Fun-and-Profit/x2go.png]]
+#+BEAMER: \end{center}
+*** My Raspberry Pi has a Xeon processor
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+#+ATTR_LATEX: :width 1\textwidth
+[[./img/VPS-for-Fun-and-Profit/x3go.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.35
+:END:
+
+- X2Go is a superb remote-desktop for Linux hosts
+- With Linux, Windows, and OSX clients
+- Fast enough for Youtube
+- Have a high-power computer that feels local, even on a SBC
+
+** SSHuttle
+*** You can run ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 1\textwidth :centering
+[[./img/VPS-for-Fun-and-Profit/sshuttle.png]]
+#+BEAMER: \end{center}
+*** sshuttle is a simple VPN
+- Transparent proxy server
+- Actually runs on local computer
+- Requires local SSH, Python, and Root
+- Requires remote server with Python and SSH
+- Tunnel all network traffic over SSH
+** Jupyter
+*** You can try ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight
+[[./img/VPS-for-Fun-and-Profit/jupyter.png]]
+#+BEAMER: \end{center}
+** Irssi
+*** You can try ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 1\textwidth
+[[./img/VPS-for-Fun-and-Profit/irssi.png]]
+#+BEAMER: \end{center}
+** Mosh
+*** You can try ...
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.85\textheight
+[[./img/VPS-for-Fun-and-Profit/mosh.png]]
+#+BEAMER: \end{center}
+** Random Stuff
+*** You can do other random things
+- Host random files too large to email
+- Run a Minecraft server
+- Host that one project you want to do
+- Run a Mumble server
+- ...
+* Wow! Where can I get one?
 *** Where you can get a VPS
-1. DigitalOcean.com
-2. BuyVM.net
-3. Chunkhost.com
-4. Linode.com
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.48
+:END:
+
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.7\textwidth
+[[./img/VPS-for-Fun-and-Profit/do.png]]
+#+BEAMER: \end{center}
+
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.7\textwidth
+[[./img/VPS-for-Fun-and-Profit/buyvm.png]]
+#+BEAMER: \end{center}
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.48
+:END:
+
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.5\textwidth
+[[./img/VPS-for-Fun-and-Profit/ch.png]]
+#+BEAMER: \end{center}
+
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.7\textwidth
+[[./img/VPS-for-Fun-and-Profit/linode.png]]
+#+BEAMER: \end{center}
+
+*** This has been /VPS for Fun and Profit!/
+- Slide source code available at *Github.com/dslachut/talks/tech*
+- Copyleft David Lachut 2015, CC-BY-SA
+- Questions?
