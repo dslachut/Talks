@@ -378,6 +378,6 @@
 #+BEAMER: \end{center}
 
 *** This has been /VPS for Fun and Profit!/
-- Slide source code available at *Github.com/dslachut/talks/tech*
+- Slide source code available at *Github.com/dslachut/Talks/tree/master/tech*
 - Copyleft David Lachut 2015, CC-BY-SA
 - Questions?
