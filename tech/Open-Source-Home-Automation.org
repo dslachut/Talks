@@ -1,14 +1,426 @@
-* Bio
-- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
-  Maryland, Baltimore County. His research combines home automation and data 
-  analysis to build residential energy management systems. His first linux 
-  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
-  Debian Testing. And his secret ambition is to live on the starship 
-  Enterprise, or at least to do his part to invent the Enterprise's computer.
-* Home Automation with F/LOSS
+#+TITLE:  Home Automation with F/LOSS
+#+AUTHOR: David Lachut
+#+EMAIL:  dlachut1@umbc.edu
+#+DATE:   5 October 2015
+
+#+DESCRIPTION: 
+#+KEYWORDS:    
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t tags:nil
+#+OPTIONS:     TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil toc:1 tags:not-in-toc
+#+INFOJS_OPT:  view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+
+#+EXPORT_SELECT_TAGS:  export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LINK_UP:   
+#+LINK_HOME: 
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usepackage{subfigure}
+#+LaTeX_HEADER: \usepackage{algorithmic}
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_THEME: default
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+
+# \author[David Lachut]{{\large David Lachut}\\
+#   Mobile, Pervasive, and Sensor Systems Lab\\
+#   ECLIPSE Cluster\\
+#   Department of Computer Science and Electrical Engineering\\
+#   University of Maryland, Baltimore County\\
+#   {\tt dlachut1@umbc.edu}\\
+#   \url{http://dslachut.com}
+# }
+
+* Abstract														   :noexport:
+*** Abstract
+**** Home Automation with F/LOSS
 - If you're like me, you want to live in the home of the future where automated
   servants treat you like royalty. And, if you're like me, you can't stand the
   idea of running something so important as your home with proprietary 
   software. This talk will overview the current landscape of home-automation
   technology, see where free software can come in to it, and go over the basics
   of automating your own home.
+**** Bio
+- David Lachut is a PhD Candidate in Computer Science at the Univeristy of 
+  Maryland, Baltimore County. His research combines home automation and data 
+  analysis to build residential energy management systems. His first linux 
+  distro was Ubuntu 7.10, Gutsy Gibbon, but now he spends most of his time with
+  Debian Testing. And his secret ambition is to live on the starship 
+  Enterprise, or at least to do his part to invent the Enterprise's computer.
+* Introduction
+*** Disclaimers
+- This presentation is full of my opinions. It does not necessarily represent 
+  the beliefs or opinions of UMBC, the MPSS Lab, the NSF, the State of 
+  Maryland, Samsung Electronics America, or any other group with whom I may be 
+  affiliated.
+- All trademarks herein are the property of their respective owners.
+- No animals were harmed in the making of this presentation.
+*** Who is this guy?
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+- David Lachut
+- PhD Candidate in Computer Science
+  - /Holistic Home Energy Management: From Sensing to Data Analytics/
+- B.S. Physics, 2009, University of Arkansas--Fayetteville
+- Linux and Open Source Enthusiast
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/VPS-for-Fun-and-Profit/IMG_20150927_160940197_HDR.jpg]]
+*** Home Automation is HUGE!
+- "By 2017, 90% of all Samsung products will be IoT devices — and that includes 
+  all our televisions and mobile devices. And [by 2020], every single piece of 
+  Samsung hardware will be an IoT device, whether it is an air purifier or an 
+  oven." - BK Yoon, President & CEO of Samsung
+- Google: Brillo, Nest
+- Apple: HomeKit
+- Xfinity Home
+*** My dissertation research uses home automation tools
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/thesis.pdf]]
+*** Home Automation needs Open Source
+- The only thing more personal than your home is your own body
+  - Code must be trustworthy
+  - Code must be under our control
+  - If you don't own the code running your home, you don't own your home
+- We need an "Internet of Things that do what we tell them" (Cory Doctorow, 
+  /Solid Conference 2015/)
+* Overview of Home Automation
+** Home Automation Protocols
+*** There are very many home automation standards
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.7\textwidth
+[[./img/Open-Source-Home-Automation/standards.png]]
+#+BEAMER: \end{center}
+*** X10 is more than a decade older than I am
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: width \textwidth
+[[./img/Open-Source-Home-Automation/x10.jpg]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | Powerline or 310MHz       |
+| /Open Software/      | ???                       |
+| /Topology/           | flat                      |
+| /Encryption/         | n/a                       |
+| /Bandwidth/          | very low                  |
+| /Range/              | Powerline or short        |
+| /NumDevices/         | 256                       |
+| /Applications/       | HA Only                   |
+| /Compelling Feature/ | First to market           |
+| /Disadvantage/       | Slow, limited, unreliable |
+
+*** Insteon extended X10
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | Powerline or 900MHz  |
+| /Open Software/      | ???                  |
+| /Topology/           | p2p and mesh         |
+| /Encryption/         | n/a                  |
+| /Bandwidth/          | 0.18 to 13 Kbps      |
+| /Range/              | Powerline or 45m     |
+| /NumDevices/         | Thousands            |
+| /Applications/       | HA Only              |
+| /Compelling Feature/ | Backwards compatible |
+|                      | with X10             |
+| /Disadvantage/       | Low-bandwidth        |
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/Insteon.jpg]]
+
+*** ZigBee is good but...
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/zigbee.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | 2.4GHz                        |
+| /Open Software/      | Certified OSS Stack available |
+| /Topology/           | Tree, Star, Mesh with         |
+|                      | Coordinator                   |
+| /Encryption/         | 128bit AES, key from coord    |
+| /Bandwidth/          | 20-250Kbps                    |
+| /Range/              | 10-100m (spec)                |
+|                      | 10-20m (useful)               |
+| /NumDevices/         | 5-20 (normal)                 |
+|                      | >400 (experimental)           |
+|                      | >6000 (spec)                  |
+| /Applications/       | Most IoT Domains              |
+| /Compelling Feature/ | Most deployment scenarios     |
+| /Disadvantage/       | Mostly not IPv6               |
+
+*** EnOcean is very low-power
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | 315MHz or 900MHz              |
+| /Open Software/      | fhem, ago-control             |
+| /Topology/           | Star                          |
+| /Encryption/         | 128bit AES (maybe)            |
+| /Bandwidth/          | 125Kbps                       |
+| /Range/              | 30-300m                       |
+| /NumDevices/         | maxInt32                      |
+| /Applications/       | Switches                      |
+| /Compelling Feature/ | Energy Harvesting             |
+| /Disadvantage/       | Too low power, little support |
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/enocean.png]]
+
+*** Bluetooth is getting Smarter
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/ble.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | 2.4Ghz                    |
+| /Open Software/      | Bluez                     |
+| /Topology/           | Scatternet (Mesh in       |
+|                      | development)              |
+| /Encryption/         | 128bit AES                |
+| /Bandwidth/          | 270Kbps                   |
+| /Range/              | <100m                     |
+| /NumDevices/         | up to 7x fanout           |
+| /Applications/       | Health, Sport, Proximity, |
+|                      | Alerts, Media             |
+| /Compelling Feature/ | Ubiquitous                |
+| /Disadvantage/       | Scatternet                |
+
+*** Google /Weaves/ a Nest with /Thread/
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | 2.4GHz                 |
+| /Open Software/      | ???                    |
+| /Topology/           | Mesh                   |
+| /Encryption/         | AES                    |
+| /Bandwidth/          | 20-250Kbps             |
+| /Range/              | 10-20m                 |
+| /NumDevices/         | 250ish                 |
+| /Applications/       | Limited HA             |
+| /Compelling Feature/ | Purpose-built for Home |
+|                      | Automation, IPv6       |
+| /Disadvantage/       | Few available devices  |
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.9\textwidth
+[[./img/Open-Source-Home-Automation/weave.jpg]]
+
+#+ATTR_LATEX: :width 0.9\textwidth
+[[./img/Open-Source-Home-Automation/thread.jpg]]
+#+BEAMER: \end{center}
+
+*** Z-Wave leads the US market
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/Z-Wave.jpg]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /Frequency/          | 900MHz                        |
+| /Open Software/      | reversed OSS Stack available  |
+| /Topology/           | Mesh w/ controller            |
+| /Encryption/         | 128bit AES (locks and all     |
+|                      | Gen5)                         |
+| /Bandwidth/          | 100Kbps (to 350k Gen5)        |
+| /Range/              | 30m (to 45m Gen5)             |
+| /NumDevices/         | 232                           |
+| /Applications/       | HA Only                       |
+| /Compelling Feature/ | Most available consumer       |
+|                      | devices                       |
+| /Disadvantage/       | Closed standard, Bottlenecked |
+|                      | supply                        |
+
+** Hub Systems
+*** Vera is a hackable starter hub
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | Proprietary on top of Linux |
+| /Site/          | http://getvera.com/         |
+| /Target Market/ | Consumer                    |
+| /Dev Status/    | Released                    |
+| /Functionality/ | Z-Wave, Insteon, X10        |
+| /Architecture/  | Proprietary Hub             |
+
+**** Right 														  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/vera.png]]
+
+*** Smartthings is popular, but not as hackable
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/smartthings.png]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | Proprietary                 |
+| /Site/          | http://www.smartthings.com/ |
+| /Target Market/ | Consumer                    |
+| /Dev Status/    | Released                    |
+| /Functionality/ | WiFi, ZWave, Zigbee         |
+| /Architecture/  | Proprietary Hub             |
+
+*** Apple do their own thing with HomeKit 
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | Proprietary                  |
+| /Site/          | https://developer.apple.com/ |
+| /Target Market/ | Consumer                     |
+| /Dev Status/    | Released                     |
+| /Functionality/ | MFi (BTLE, WiFi)             |
+| /Architecture/  | Proprietary Mobile+Cloud     |
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/homekit.png]]
+
+*** I've used HomeOS/Lab of Things for research
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/lot.jpg]]
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | MSR-LA                        |
+| /Site/          | http://www.lab-of-things.com/ |
+| /Target Market/ | Home Automation Research      |
+| /Dev Status/    | Beta                          |
+| /Functionality/ | Z-Wave, Custom                |
+| /Architecture/  | Hub+Cloud                     |
+
+*** IFTTT is a neat tool beyond home automation
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | Proprietary            |
+| /Site/          | https://ifttt.com      |
+| /Target Market/ | Consumer               |
+| /Dev Status/    | Released               |
+| /Functionality/ | Web API                |
+| /Architecture/  | Web-based rules engine |
+
+**** Right 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/ifttt.jpg]]
+
+*** OpenHAB is also Eclipse Smarthome
+**** Left 															  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[./img/Open-Source-Home-Automation/openhab.jpg]]
+
+**** Right 														  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+| /License/       | EPL                      |
+| /Site/          | http://www.openhab.org/, |
+|                 | http://www.eclipse.org/  |
+| /Target Market/ | Enthusiast               |
+| /Dev Status/    | Released, v2 in Beta     |
+| /Functionality/ | Z-Wave, Serial, Insteon, |
+|                 | and Many More            |
+| /Architecture/  | Event-bus-based Hub      |
+
+* 
