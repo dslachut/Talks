@@ -423,4 +423,26 @@
 |                 | and Many More            |
 | /Architecture/  | Event-bus-based Hub      |
 
-* 
+* Automating with OpenHAB
+*** OpenHAB supports very many interfaces
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :width 0.4\textwidth
+[[./img/Open-Source-Home-Automation/OpenHabSupports.png]]
+#+BEAMER: \end{center}
+*** 
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.8\textheight
+[[./img/Open-Source-Home-Automation/OpenHabComm.png]]
+#+BEAMER: \end{center}
+*** 
+#+BEAMER: \begin{center}
+#+ATTR_LATEX: :height 0.8\textheight
+[[./img/Open-Source-Home-Automation/OpenHabArch.png]]
+#+BEAMER: \end{center}
+* Demo
+*** Demo Time!
+- I hope this works...
+*** This has been /Home Automation with FLOSS/
+- Slide source code available at *Github.com/dslachut/Talks/tree/master/tech*
+- Copyleft David Lachut 2015, CC-BY-SA
+- Questions?
